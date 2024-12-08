@@ -1,25 +1,25 @@
-name: 'Setup GStreamer'
-description: 'Setup GStreamer in the environment'
-author: 'Laerdal Labs, DC'
+name: Setup GStreamer
+description: Setup GStreamer in the environment
+author: Laerdal Labs, DC
 branding:
-  color: 'red'
-  icon:  'activity'
+  color: red
+  icon: activity
 inputs:
   version:
-    description: 'version number'
-    required:    false
-    default:     '1.22.7'
+    description: version number
+    required: false
+    default: 1.22.7
   arch:
-    description: 'architecture (x86, x86_64)'
-    required:    false
-    default:     'x86_64'
+    description: architecture (x86, x86_64)
+    required: false
+    default: x86_64
   repoUrl:
-    description: 'the location of the source repository'
-    required:    false
-    default:     'https://gitlab.freedesktop.org/gstreamer/gstreamer.git'
+    description: the location of the source repository
+    required: false
+    default: https://gitlab.freedesktop.org/gstreamer/gstreamer.git
   gstreamerOptions:
-    description: 'The option configuration string for buliding GStreamer from source'
-    required:    false
+    description: The option configuration string for buliding GStreamer from source
+    required: false
     default: |-
       -Dlibnice:tests=disabled
       -Dlibnice:examples=disabled
@@ -42,18 +42,21 @@ inputs:
       -Dgst-plugins-good:soup=enabled
       -Dgst-plugins-good:soup-lookup-dep=true
   msiUrl:
-    description: 'Optional override of the URL from which to download the Windows runtime msi installer'
+    description: Optional override of the URL from which to download the Windows
+      runtime msi installer
     required: false
   devMsiUrl:
-    description: 'Optional override of the URL from which to download the Windows development libraries msi installer'
+    description: Optional override of the URL from which to download the Windows
+      development libraries msi installer
     required: false
   buildRun:
-    description: 'Optional input with the run number for the workflow'
+    description: Optional input with the run number for the workflow
     required: false
 outputs:
   gstreamerPath:
-    description: 'Installation path'
+    description: Installation path
 runs:
-  using: 'node20'
-  main: 'dist/main/index.js'
-  post: 'dist/post/index.js'
+  using: node20
+  main: dist/main/index.js
+  post: dist/post/index.js
+version: 1.5.2
