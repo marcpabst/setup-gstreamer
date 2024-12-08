@@ -15,6 +15,6 @@ jobs:
     steps:
       - name: update version
         id: update-version
-        uses: blinemedical/action-update-version@v1
+        uses: vimtor/action-update-version@v1
         with:
           target: ${{ github.ref_name }}
