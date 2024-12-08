@@ -27,7 +27,7 @@ const combineBuildArgs = (systemArgs, userArgs) =>
 
 // Github action runners (shared) currently run in passwordless sudo mode.
 const DistroVersionPackageMap = {
-  Ubuntu: LinuxDistroConfig(['20.04', '22.04'], {}, [
+  Ubuntu: LinuxDistroConfig(['20.04', '22.04', '24.04'], {}, [
     LinuxDistroCommand('sudo', ['DEBIAN_FRONTEND=noninteractive', 'apt', 'update']),
     LinuxDistroCommand('sudo', [
       'DEBIAN_FRONTEND=noninteractive',
