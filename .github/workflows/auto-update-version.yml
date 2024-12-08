@@ -18,3 +18,4 @@ jobs:
         uses: vimtor/action-update-version@v1
         with:
           target: ${{ github.ref_name }}
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
