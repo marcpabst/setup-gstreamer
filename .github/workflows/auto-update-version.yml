@@ -1,21 +1,15 @@
-name: Auto Update Version
-run-name: Move to ${{ github.ref_name }}
-
+name: Upgrade Version
 on:
-  #changed to workflow_dispatch to disable auto trigger until we figure out the public/private repo issue
-  workflow_dispatch:
-    inputs:
-      target:
-        description: Target Tag
-        required: true
+  release:
+    types: [published]
 
 jobs:
-  update:
+  upgrade-version:
     runs-on: ubuntu-latest
     steps:
-      - name: update version
-        id: update-version
-        uses: vimtor/action-update-version@v1
+      - uses: actions/checkout@v2
+      - uses: vimtor/action-update-version@v1
         with:
-          target: ${{ github.ref_name }}
+          files: 'package.json, app.yaml'
+          version-regexp: '\d+.\d+.\d+'
           repo-token: ${{ secrets.GITHUB_TOKEN }}
