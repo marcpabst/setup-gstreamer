@@ -10,6 +10,6 @@ jobs:
       - uses: actions/checkout@v2
       - uses: vimtor/action-update-version@v1
         with:
-          files: 'package.json, app.yaml'
+          files: 'package.json, action.yml'
           version-regexp: '\d+.\d+.\d+'
           repo-token: ${{ secrets.GITHUB_TOKEN }}
