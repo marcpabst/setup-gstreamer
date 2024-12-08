@@ -59,4 +59,4 @@ runs:
   using: node20
   main: dist/main/index.js
   post: dist/post/index.js
-version: 1.5.2
+version: 1.5.3

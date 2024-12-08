@@ -1,6 +1,6 @@
 {
   "name": "setup-gstreamer",
-  "version": "1.5.2",
+  "version": "1.5.3",
   "description": "Setup GStreamer - GitHub Action",
   "main": "index.js",
   "engines": {
